@@ -1,0 +1,42 @@
+{
+	"name": "mqtt-hue",
+	"version": "0.0.1",
+
+	"description": "MQTT integration for Philips HUE",
+	"author": "zephyrus",
+
+	"license": "MIT",
+
+	"homepage": "https://github.com/zephyrus/mqtt-hue",
+
+	"bugs": {
+		"url": "https://github.com/zephyrus/mqtt-hue/issues"
+	},
+
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/zephyrus/mqtt-hue.git"
+	},
+
+	"keywords": [
+		"mqtt",
+		"hue"
+	],
+
+	"scripts": {
+		"lint": "eslint .",
+		"start": "node index.js"
+	},
+
+	"dependencies": {
+		"mqtt": "4.1.0",
+		"node-hue-api": "4.0.9",
+		"lodash": "4.17.19"
+	},
+
+	"devDependencies": {
+		"eslint": "7.5.0",
+		"eslint-plugin-import": "2.22.0",
+		"eslint-config-airbnb-base": "14.2.0"
+	}
+}
