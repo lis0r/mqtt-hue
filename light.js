@@ -25,7 +25,15 @@ module.exports.Light = class Light extends EventEmitter {
 	}
 
 	set(data) {
-		return this.hub.hue.lights.setLightState(this.id, data);
+		if ('toggle' in data) {
+			delete data['toggle'];
+			return this.hub.hue.lights.getLightState(this.id).then(old => {
+				data['on'] = !old['on'];
+				return this.hub.hue.lights.setLightState(this.id, data);
+			});
+		} else {
+			return this.hub.hue.lights.setLightState(this.id, data);
+		}
 	}
 
 };
