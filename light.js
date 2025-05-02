@@ -25,6 +25,9 @@ module.exports.Light = class Light extends EventEmitter {
 	}
 
 	set(data) {
+		if (!('transition' in data)) {
+			data['transition'] = 0;
+		}
 		if ('toggle' in data) {
 			delete data['toggle'];
 			return this.hub.hue.lights.getLightState(this.id).then(old => {
